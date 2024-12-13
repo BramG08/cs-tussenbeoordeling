@@ -110,10 +110,18 @@ public class GameEngine : MonoBehaviour
 
 
         Debug.Log(dx + " " + dy + " " + dz);
-     
 
+        double dist = GetDist(enemy.obj, to);
+        Debug.Log(dist);
 
+        if (dist <= 0.05)
+        {
+            Debug.Log("goto next!");
+            enemy.obj.transform.position = to.transform.position;
 
+            enemy.to++;
+            enemy.from++;
+        }
     }
 
 
